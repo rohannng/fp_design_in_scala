@@ -4,9 +4,9 @@ import org.junit._
 import org.junit.Assert.assertEquals
 
 class CalculatorSuite {
-  /******************
-   ** TWEET LENGTH **
-   ******************/
+  /** ****************
+   * * TWEET LENGTH **
+   * *****************/
 
   import TweetLength._
 
@@ -55,7 +55,7 @@ class CalculatorSuite {
     assertEquals("red", resultRed2())
   }
 
-   import Polynomial._
+  import Polynomial._
   import Ordering.Double.TotalOrdering
 
   def kindaEqual(a: Double, b: Double): Boolean =
@@ -92,11 +92,11 @@ class CalculatorSuite {
     assertEquals(0, result().size)
   }
 
-  /****************
-   ** CALCULATOR **
-   ****************/
+  /** **************
+   * * CALCULATOR **
+   * ***************/
 
-   import Calculator._
+  import Calculator._
 
   // test cases for calculator
   @Test def `Self dependency`: Unit = {
@@ -216,6 +216,7 @@ class CalculatorSuite {
     val output = computeValues(input)
 
     var accessMap = Map[String, Int]()
+
     def updateMap(key: String): Unit = {
       if (accessMap.contains(key))
         accessMap = accessMap.updated(key, accessMap(key) + 1)
@@ -233,7 +234,8 @@ class CalculatorSuite {
     assert(checkRes, " - Your implementation should update only the dependent values " +
       "when an expression changes")
   }
-/*++++++*/
+
+  /*++++++*/
 
   @Rule def individualTestTimeout = new org.junit.rules.Timeout(10 * 1000)
 }
